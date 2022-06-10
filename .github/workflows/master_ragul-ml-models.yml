@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'ragul-ml-models'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6F31C1BBC64B4F5186F357A4B57CF4BC }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_212C63B5AA794A3C95B68E1646E90BFC }}
