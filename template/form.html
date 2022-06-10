@@ -28,12 +28,12 @@
                     <h2 class="title">Make Predictions</h2>
                     <form action="/predict" method="POST">
                         <div class="input-group">
-                            <input class="input--style-3" type="text" placeholder="Name" name="name">
+                            <input class="input--style-3" type="text" placeholder="Name" name="name" required>
                         </div>
                         <div class="input-group">
-                            <input class="input--style-3" type="text" placeholder="Age" name="age">
+                            <input class="input--style-3" type="text" placeholder="Age" name="age" required>
                         </div>
-                        <div class="input-group">
+                        <div class="input-group" required>
                             <input class="input--style-3" type="text" placeholder="Bmi" name="bmi">
                         </div>
                         <div class="input-group">
@@ -60,16 +60,7 @@
                                 <div class="select-dropdown"></div>
                             </div>
                         </div>
-                        <div class="input-group">
-                            <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="residence">
-                                    <option disabled="disabled" selected="selected" name="">residence</option>
-                                    <option name="residence" value="1">urban</option>
-                                    <option  name="residence" value="0">rural</option>
-                                </select>
-                                <div class="select-dropdown"></div>
-                            </div>
-                        </div>
+                        
                         <div class="input-group">
                             <div class="rs-select2 js-select-simple select--no-search">
                                 <select name="Working">
@@ -86,12 +77,12 @@
 
                         <div class="input-group">
                             <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="smoking-status">
+                                <select name="smoking_status">
                                     <option disabled="disabled" selected="selected" name="">smoking status</option>
-                                    <option name="smoking-status" value="1">formely smoked</option>
-                                    <option name="smoking-status" value="2">never smoked</option>
-                                    <option name="smoking-status" value="3">smokes</option>
-                                    <option name="smoking-status" value="0">Dont Want to share</option>
+                                    <option name="smoking_status" value="1">formely smoked</option>
+                                    <option name="smoking_status" value="2">never smoked</option>
+                                    <option name="smoking_status" value="3">smokes</option>
+                                    <option name="smoking_status" value="0">Dont Want to share</option>
                                 </select>
                                 <div class="select-dropdown"></div>
                             </div>
