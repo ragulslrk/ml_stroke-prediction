@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Title Page-->
+    <title>Register Forms</title>
+
+    <!-- Icons font CSS-->
+  
+    <link href="{{ url_for('static',filename='vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" >
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="{{ url_for('static', filename='vendor/select2/select2.min.css')}}" rel="stylesheet" >
+    <link href="{{ url_for('static', filename='vendor/datepicker/daterangepicker.css')}}" rel="stylesheet" >
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}" >
+    
+</head>
+
+<body>
+    <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w780">
+            <div class="card card-3">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <h2 class="title">Make Predictions</h2>
+                    <form action="/predict" method="POST">
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="Name" name="name">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="Age" name="age">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="Bmi" name="bmi">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="Glucose Level" name="glucose">
+                        </div>
+                        <div class="input-group">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="gender">
+                                    <option disabled="disabled" selected="selected" name="">Gender</option>
+                                    <option name="gender" value="1">Male</option>
+                                    <option name="gender" value="0">Female</option>
+                                    <option  name="gender"value="2">Other</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="Hypertension" >
+                                    <option disabled="disabled" selected="selected" name="">Hypertension</option>
+                                    <option name="Hypertension" value="1">Yes</option>
+                                    <option name="Hypertension" value="0">No</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="residence">
+                                    <option disabled="disabled" selected="selected" name="">residence</option>
+                                    <option name="residence" value="1">urban</option>
+                                    <option  name="residence" value="0">rural</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="Working">
+                                    <option disabled="disabled" selected="selected"name="">Working Type</option>
+                                    <option name="Working" value="3">Self-employed</option>
+                                    <option name="Working" value="0">Goverment Job</option>
+                                    <option name="Working" value="2">Private</option>
+                                    <option name="Working"  value="4">children</option>
+                                    <option name="Working" value="1">Never worked</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="smoking-status">
+                                    <option disabled="disabled" selected="selected" name="">smoking status</option>
+                                    <option name="smoking-status" value="1">formely smoked</option>
+                                    <option name="smoking-status" value="2">never smoked</option>
+                                    <option name="smoking-status" value="3">smokes</option>
+                                    <option name="smoking-status" value="0">Dont Want to share</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="martial">
+                                    <option disabled="disabled" selected="selected" name="martial">martial status</option>
+                                    <option name="martial" value="0">single</option>
+                                    <option name="martial" value="1">married</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                        <div class="p-t-10">
+                            <button class="btn btn--pill btn--green" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js')}}"></script>
+    <!-- Vendor JS-->
+    <script src="{{ url_for('static', filename='vendor/select2/select2.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='vendor/datepicker/moment.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='vendor/datepicker/daterangepicker.js')}}"></script>
+
+    <!-- Main JS-->
+    <script src="{{ url_for('static', filename='js/global.js')}}"></script>
+
+</body>
+
+</html>
+<!-- end document-->
