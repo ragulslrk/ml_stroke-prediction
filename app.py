@@ -7,7 +7,7 @@ import pickle
 from chefboost import Chefboost as ch
 #flask and pymongo intialization
 app=Flask(__name__,template_folder='template',static_url_path='/static')
-app.config['SECRET_KEY']='form project'
+#app.config['SECRET_KEY']='form project'
 #for mongodb connection 
 mongodb_client = PyMongo(app, uri="mongodb://localhost:27017/stroke_preds")
 db = mongodb_client.db
@@ -17,8 +17,8 @@ db = mongodb_client.db
 f= open('stroke_model','rb') 
 mp=pickle.load(f)
 
-model_id3 = ch.load_model("tennis_model.pkl")   
 
+model_id3 = ch.load_model("cricket_models.pkl")
 
 @app.route('/')
 def  home():
@@ -68,16 +68,18 @@ def id3():
 @app.route('/predict_id3',methods=['POST'])
 def predict_id3():
     if request.method=="POST":
+          
+        
          
-         predict_id3=ch.predict(model_id3,param=[request.form['outlook'],request.form['temp'],request.form['humidity'],request.form['wind'] ])
-         print(request.form)
-         print(predict_id3)
-         if predict_id3=="No":
+        predict_id3=ch.predict(model_id3,param=[request.form['outlook'],request.form['temp'],request.form['humidity'],request.form['wind'] ])
+        print(request.form)
+        print(predict_id3)
+        if predict_id3=="No":
             pre=0
-         else:
-            pre=1
+        else:
+            pre=1           
          
-         return  redirect(url_for('result_id3',res=pre))
+        return  redirect(url_for('result_id3',res=pre))
 
 @app.route("/result_id3/<int:res>")
 def result_id3(res):
@@ -95,5 +97,6 @@ def result_id3(res):
     #path = "./healthcare-dataset-stroke-data.csv"
     #return send_file(path, as_attachment=True)
 if __name__ =="__main__":  
+
     
     app.run()
